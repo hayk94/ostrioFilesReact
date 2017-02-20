@@ -19,7 +19,7 @@ const FileUploadComponent = React.createClass({
     var handle = Meteor.subscribe('files.all');
     return {
       docsReadyYet: handle.ready(),
-      docs: UserFiles.find().fetch() // Collection is UserFiles
+      docs: files.find().fetch() // Collection is files
     };
   },
 
@@ -35,7 +35,7 @@ const FileUploadComponent = React.createClass({
       var file = e.currentTarget.files[0];
 
       if (file) {
-        let uploadInstance = UserFiles.insert({
+        let uploadInstance = files.insert({
           file: file,
           meta: {
             locator: self.props.fileLocator,
@@ -125,7 +125,7 @@ const FileUploadComponent = React.createClass({
       let showit = fileCursors.map((aFile, key) => {
         // console.log('A file: ', aFile.link(), aFile.get('name'));
 
-        let link = UserFiles.findOne({_id: aFile._id}).link();  //The "view/download" link
+        let link = files.findOne({_id: aFile._id}).link();  //The "view/download" link
 
         // Send out components that show details of each file
         return <div key={'file' + key}>

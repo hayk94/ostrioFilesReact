@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import FileUploadComponent from './FileUpload'
 
 function App () {
   return (
-    <div>Main App</div>
+    <div>
+      <h1>Veliov Test App</h1>
+      <FileUploadComponent />
+    </div>
   )
 }
 
