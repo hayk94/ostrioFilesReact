@@ -3,6 +3,7 @@ import React from 'react';
 import {Meteor} from 'meteor/meteor';
 import IndividualFile from './FileIndividualFile.jsx';
 import {_} from 'meteor/underscore';
+import { files } from '../lib/files.collection.js'
 
 const FileUploadComponent = React.createClass({
   mixins: [ReactMeteorData],
